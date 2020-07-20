@@ -1,0 +1,118 @@
+<div class="container">
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+        <mat-step>
+        <form>
+            <ng-template matStepLabel>You</ng-template>
+            <mat-form-field>
+            <mat-label>You Section</mat-label>
+            <input matInput placeholder="Last name, First name" required>
+            </mat-form-field>
+            <div class="row justify-content-between">
+                <button mat-button matStepperNext class="btn btn-warning">Next</button>
+            </div>
+        </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Project</ng-template>
+            <div class="row align-items-center">
+                <mat-label class="w-100 font-weight-bold mt-2 pt-2 pb-2 mb-2">What is your project type?</mat-label>
+                <mat-button-toggle-group name="projectType" aria-label="Project Type">
+                    <mat-button-toggle value="residential">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+                        <p>Residential</p>
+                    </mat-button-toggle>
+                    <mat-button-toggle value="office">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+                        <p>Office</p>
+                    </mat-button-toggle>
+                    <mat-button-toggle value="retail">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+                        <p>Retail</p>
+                    </mat-button-toggle>
+                    <mat-button-toggle value="industrial">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+                        <p>Industrial</p>
+                    </mat-button-toggle>
+                    <mat-button-toggle value="accommodation">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+                        <p>Accommodation</p>
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+            <div class="row align-items-center">
+                <mat-label class="w-100 font-weight-bold mt-2 pt-2 pb-2mb-2">Subtype of project?</mat-label>
+                <mat-button-toggle-group name="subType" aria-label="Project Subtype">
+                    <mat-button-toggle value="studentAcc">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+                        <p>Student Accomodation</p>
+                    </mat-button-toggle>
+                    <mat-button-toggle value="hotel">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+                        <p>Hotel</p>
+                    </mat-button-toggle>
+                  </mat-button-toggle-group>
+            </div>
+            <div class="row">
+                <mat-label class="w-100 font-weight-bold mt-2 pt-2 pb-2mb-2">What is the name of your project?</mat-label>
+                <mat-form-field style="width:100%">
+                <input matInput formControlName="projectName" required>
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-label class="w-100 font-weight-bold mt-2 pt-2 pb-2mb-2">Where is the location of your project?</mat-label>
+                <mat-form-field style="width:100%">
+                    <input matInput formControlName="projectLocation" placeholder="Ex. 120 Main St, Sydney"
+                            required>
+                </mat-form-field>
+            </div>
+            <div class="row justify-content-between">
+                <button mat-button matStepperPrevious class="btn btn-warning">Back</button>
+                <button mat-button matStepperNext class="btn btn-warning">Next</button>
+            </div>
+        </form>
+        </mat-step>
+        <mat-step>
+        <ng-template matStepLabel>Funding</ng-template>
+        <p>Funding Section</p>
+        <div class="row justify-content-between">
+            <button mat-button matStepperPrevious class="btn btn-warning">Back</button>
+            <button mat-button matStepperNext class="btn btn-warning">Next</button>
+        </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Review</ng-template>
+            <p>Review Section</p>
+            <div class="row justify-content-between">
+                <button mat-button matStepperPrevious class="btn btn-warning">Back</button>
+                <button mat-button matStepperNext class="btn btn-warning">Next</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Landing</ng-template>
+                <mat-card class="example-card">
+                    <mat-card-header>
+                    <mat-card-title>Are you ready?</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div class="row">
+                            <div class="col-8">
+                                <p>
+                                    Good job. Your projects have just landed on the moon. Now see which lenders on the moon matches your requirements!
+                                </p>
+                            </div>
+                            <div class="col-4">
+                                <img src="assets/images/moon-lending-logo.jpg" width="100%"/>
+                            </div>
+                        </div>
+                        </mat-card-content>
+                    <mat-card-actions>
+                    <button mat-button class="btn btn-success">Land on the moon</button>
+                    </mat-card-actions>
+                </mat-card>
+            <div>
+            <button mat-button matStepperPrevious class="btn btn-warning mt-3">Back</button>
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>
